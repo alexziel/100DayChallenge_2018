@@ -1,5 +1,3 @@
-''' Higher/Lower game ver. 1.0 '''
-
 import random
 
 guesses = 6
