@@ -29,4 +29,3 @@ while choose == "y":
     generated_name(gender)
     choose = input("Generate again? Choose y for yes or type anything else to exit \n")
 print("Bye!")
-
