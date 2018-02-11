@@ -1,4 +1,5 @@
 import random
+import string
 
 hangman = [
 '''
@@ -83,10 +84,14 @@ for letters in secret_word:
     blank_word.append('-')
 
 
+def user_guess():  # TODO user guessing
+    print('user guess')
+
+
 def play_again():
     while True:
-        choose_again = input('Do you want to play again? Yes [y] or no [n]? ').lower()
-        if choose_again == 'y' or choose_again == 'yes':
+        choose_again = input('Do you want to play again? Yes [y] or no [n]? ')
+        if choose_again[0].lower() == 'y':
             main_game()
         else:
             print('Bye!')
@@ -100,7 +105,16 @@ def main_game():
 
     while i < max_guesses:
         i += 1
-        guess = input('Enter your letter: ')
+        while True:
+            # print('')
+            guess = input('Enter your letter: ')
+            if len(guess) == 1:
+                if guess in string.ascii_letters:
+                    break
+                print('Please enter only letters')
+            else:
+                print('Please enter only one character')
+        user_guess()
     play_again()
 
 
